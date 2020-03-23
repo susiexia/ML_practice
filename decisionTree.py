@@ -66,6 +66,13 @@ print(report)
 from sklearn.metrics import precision_recall_fscore_support
 summary = precision_recall_fscore_support(y_test,y_pred)
 summary
+
+# %%
+# rank the importance of features
+importance = DT_model.feature_importances_
+
+# combine with column name by using zip(), list function: sorted()
+sorted(zip(importance, X.columns), reverse=True)
 # %% [markdown]
 
 # In summary, this model may not be the best one for preventing fraudulent loan applications because the model's accuracy, 0.5, is low, and the precision and recall are not good enough to state that the model will be good at classifying fraudulent loan applications. Modeling is an iterative process: you may need more data, more cleaning, another model parameter, or a different model. It’s also important to have a goal that’s been agreed upon, so that you know when the model is good enough.
