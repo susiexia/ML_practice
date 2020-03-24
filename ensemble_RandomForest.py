@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+
 # %%
 df = pd.read_csv('./Resouces/loans_data_encoded.csv')
 
@@ -68,5 +69,14 @@ display(cm_df)
 print(f"Accuracy Score : {acc_score}, Model test Accuracy score : {model_score}")
 print("Classification Report")
 print(classification_report(y_test, y_pred))
+
+# %%
+# rank the importance of features
+# no need to import library
+
+importance = RFmodel.feature_importances_
+
+importance_ranking = sorted(zip(importance, X.columns), reverse= True)
+importance_ranking
 
 # %%
