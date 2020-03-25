@@ -14,7 +14,8 @@ from imblearn.under_sampling import ClusterCentroids
 from sklearn.linear_model import LogisticRegression
 
 from imblearn.metrics import classification_report_imbalanced
-from sklearn.metrics import balanced_accuracy_score
+from sklearn.metrics import balanced_accuracy_score, confusion_matrix
+
 # %%
 df = pd.read_csv('./Resouces/cc_default.csv')
 df.head()
@@ -47,10 +48,12 @@ y_pred = model.predict(X_test)
 
 # %%
 # evaluate
+
 confusion_matrix(y_test, y_pred)
 # %%
 balanced_accuracy_score(y_test, y_pred)
 # %%
+
 print(classification_report_imbalanced(y_test, y_pred))
 # %% [markdown]
 # #ClusterCentroid Undersampling
