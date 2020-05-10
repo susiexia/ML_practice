@@ -13,7 +13,7 @@ from collections import Counter
 
 
 # %%
-data = Path('./Resources/cc_default.csv')
+data = Path('Resources/cc_default.csv')
 df = pd.read_csv(data)
 
 
