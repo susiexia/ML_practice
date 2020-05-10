@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
 # %%
-df = pd.read_csv('./Resouces/loans_data_encoded.csv')
+df = pd.read_csv('Resouces/loans_data_encoded.csv')
 
 # %%
 # define the features set
